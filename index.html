@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prima Power</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-table.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="css/bootstrap-editable.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+
+</head>
+
+<body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <div class="container">
+        <h1 class="text-center"> 
+		WORK ORDER
+		</h1>
+
+        <div id="toolbar">
+            <button id="switcher" class="btn btn-primary btn"> <span class="glyphicon glyphicon-pencil"></span>
+
+            </button>
+            <a href="#addingForm" data-toggle="modal">
+                <button id="adding" class="btn btn-primary btn">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </a>
+            <a href="#deleteForm" data-toggle="modal">
+                <button id="deleteButton" class="btn btn-danger btn">
+                    <span class="glyphicon glyphicon glyphicon-minus"></span>
+                </button>
+            </a>
+
+            <div class="modal fade" id="addingForm" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form class="form-horizontal" method="get" action="adding.php">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h3 class="modal-title">NEW JOB</h3>
+
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="customer" class="col-lg-3 control-label">Customer</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" id="customer" name="customer" placeholder="Customer">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="material" class="col-lg-3 control-label">Material</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" id="material" name="material" placeholder="Material">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="work_name" class="col-lg-3 control-label">Work</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" id="work_name" name="work_name" placeholder="Work">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patch_time" class="col-lg-3 control-label">Time</label>
+                                    <div class="col-lg-9">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type="text" class="form-control" id="patch_time" name="patch_time" placeholder="Time"> <span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity" class="col-lg-3 control-label">Quantity</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="output_package" class="col-lg-3 control-label">Output package</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" id="output_package" name="output_package" placeholder="Output package">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" type="submit" id="send" name="submit" onclick="location.reload()">Add</button>
+                                <button type="reset" class="btn btn-danger">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="deleteForm" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>Are you sure?</p>
+                        </div>
+                        <div class="modal-footer center-block">
+                            <button class="btn btn-primary" type="submit" id="deleteConfirm" data-dismiss="modal"> <span class="glyphicon glyphicon-ok"></span>
+
+                            </button>
+                            <button class="btn btn-default" data-dismiss="modal"> <span class="glyphicon glyphicon-remove"></span>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="table-hover" data-toggle="table" data-toolbar="#toolbar" data-height="460" data-search="true" data-show-toggle="true" data-show-columns="true" data-pagination="true" data-url="work.json">
+            <thead>
+                <tr>
+                    <th class="col-sm-1" data-field="state" data-checkbox="true"></th>
+                    <th class="col-sm-2" data-field="customer" data-editable="true" data-align="center">Customer</th>
+                    <th class="col-sm-3" data-field="material" data-editable="true" data-align="center">Material</th>
+                    <th class="col-sm-1" data-field="work_name" data-editable="true" data-align="center">Work</th>
+                    <th class="col-sm-3" data-field="patch_time" data-editable="true" data-align="center">Time</th>
+                    <th class="col-sm-1" data-field="quantity" data-editable="true" data-align="center">Quantity</th>
+                    <th class="col-sm-1" data-field="output_package" data-editable="true" data-align="center">Output package</th>
+                </tr>
+            </thead>
+            <tbody id="sortable"></tbody>
+        </table>
+    </div>
+    <img src="http://tinycount.com/tc" title="TinyCount.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/bootstrap.js"></script>
+
+    <script src="js/bootstrap-table.js"></script>
+    <script src="js/bootstrap-table-en-US.js"></script>
+
+    <script src="js/validator.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/bootstrap-datetimepicker.js"></script>
+
+
+    <script src="js/bootstrap-table-editable.js"></script>
+    <script src="js/bootstrap-editable.min.js"></script>
+    <script src="js/app.js">
+    </script>
+</body>
+
+</html>

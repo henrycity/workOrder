@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+	overflow-x: hidden;
+}
+h1 {
+font-size: 3em;
+}
+.header-container {
+	background-color: #efeeee;
+	margin: 0 0 0 0;
+	padding: 1.5em 0 1.5em 0;
+}
+.table {
+	font-size: 1.5em;
+}
+#rowTable {
+	padding: 10em 0;
+}
+input.form-control {
+	font-size: 2em;
+	height: 1.5em;
+}
+body > div.container > div.bootstrap-table > div.fixed-table-toolbar > div.columns.columns-right.btn-group.pull-right > button,
+body > div.container > div.bootstrap-table > div.fixed-table-toolbar > div.columns.columns-right.btn-group.pull-right > div > button {
+	font-size: 2em;
+	background-color: #5bc0de;
+	color: white;
+}
+#adding {
+	font-size: 2em;
+	background-color: green;
+}
+body > div.container > div.bootstrap-table > div.fixed-table-toolbar > div.pull-right.search.form-group-lg > input {
+	height: 3em;
+}
+#toolbar > a > button, #switcher {
+	font-size: 2em;
+}
+#deleteButton {
+	font-size: 2em;
+}
+.glyphicon-minus-sign {
+	color: red;
+}
+.menuButton {
+	background-color: #3366FF;
+	cursor: move;
+	cursor: -webkit-grabbing;
+	
+}
+#addingForm > div > div > form > div.modal-header > h3 {
+	text-align: middle;
+}
+#switcher.editing {
+    background-color: white; /* Or some other color */
+	color: #337ab7;
+}
+#switcher {
+    background-color: #337ab7; /* Or some other color */
+	color: white;
+}
+.abc {
+	position: absolute;
+	top:0px;
+	right:10px; 
+}
+.texting {
+	position: relative;  
+}
+.nod-error-message{
+	color: red;
+	font-size: large;
+	font-style: italic;
+}
+#datetimepicker1 > span.input-group-addon{
+	height: 40px;
+	width: 42px;
+}
+a.editable-click.editable-disabled {
+  color: black;  
+  border-bottom: none;
+  font-weight: normal;
+}
+a.editable-click {
+  color: #0088cc;
+  border-color: #0088cc;
+  font-weight: normal;
+} 
+#deleteForm {
+	top: 25%;
+}
+#deleteForm  p{
+	text-align: center;
+	color: black;
+	font-weight: bold;
+	font-size: 1.2em;
+
+}
+#deleteForm .modal-dialog {
+	width: 25%;
+}
+#deleteForm .modal-footer,
+#addingForm > div > div > form > div.modal-footer {
+	text-align: center;
+}
+#deleteConfirm {
+	background-color: rgb(21,205,21);
+	width: 30%;
+}
+#deleteForm > div > div > div.modal-footer.center-block > button.btn.btn-default {
+	background-color: red;
+	width: 30%;
+}
+#deleteForm > div > div > div.modal-footer.center-block > button.btn.btn-default > span {
+	color: white;
+}
+#addingForm > div > div > form > div.modal-header > h3 {
+	text-align: center;
+	font-weight: bold;
+}
+#send, 
+#addingForm > div > div > form > div.modal-footer > button.btn.btn-danger {
+	width: 30%;
+}
+.form-horizontal .control-label {
+	text-align: left;
+}
+#addingForm > div > div > form > div.modal-body {
+	padding: 30px;
+}
